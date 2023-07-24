@@ -2,7 +2,7 @@
 <manifest>
 
   <remote  name="aosp"
-           fetch=".."
+           fetch="https://android.googlesource.com/"
            review="https://android-review.googlesource.com/" />
   <default revision="main"
            remote="aosp"
@@ -1317,6 +1317,8 @@
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
 
+
+  <include name="snippets/exynos.xml" />
 
   <!--
     Merge marker to make it easier for git to merge AOSP-only manifest

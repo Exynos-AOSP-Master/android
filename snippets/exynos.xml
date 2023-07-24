@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="github"
+          fetch=".."
+          revision="refs/heads/master"
+          review="android-review.googlesource.com" />
+
+  <!-- Forked repos -->
+  <remove-project name="platform/build" />
+  <project path="build/make" name="Exynos-AOSP-Master/android_build" groups="pdk" remote="github">
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <remove-project name="platform/build/soong" />
+  <project path="build/soong" name="Exynos-AOSP-Master/android_build_soong" groups="pdk,tradefed" remote="github">
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <remove-project name="platform/external/wpa_supplicant_8" />
+  <project path="external/wpa_supplicant_8" name="Exynos-AOSP-Master/android_external_wpa_supplicant_8" groups="pdk" remote="github" />
+
+</manifest>
