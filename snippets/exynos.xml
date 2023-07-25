@@ -6,6 +6,11 @@
           revision="refs/heads/master"
           review="android-review.googlesource.com" />
 
+  <remote name="leaf"
+          fetch=".."
+          revision="refs/heads/leaf-2.0"
+          review="review.leafos.org" />
+
   <!-- Forked repos -->
   <remove-project name="platform/build" />
   <project path="build/make" name="Exynos-AOSP-Master/android_build" groups="pdk" remote="github">
@@ -23,5 +28,14 @@
   </project>
   <remove-project name="platform/external/wpa_supplicant_8" />
   <project path="external/wpa_supplicant_8" name="Exynos-AOSP-Master/android_external_wpa_supplicant_8" groups="pdk" remote="github" />
+
+  <!-- Kernel building -->
+  <project path="external/dwarves" name="platform/external/dwarves" />
+  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" />
+  <project path="prebuilts/tools-lineage" name="LeafOS-Project/android_prebuilts_tools-lineage" remote="leaf" />
+  <project path="vendor/kernel_build" name="Exynos-AOSP-Master/android_vendor_kernel_build" remote="github">
+      <!-- To make AOSP build/make pick up our BoardConfig -->
+      <linkfile src="config/BoardConfigKernel.mk" dest="vendor/google/build/config.mk" />
+  </project>
 
 </manifest>
