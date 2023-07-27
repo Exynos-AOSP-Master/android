@@ -38,4 +38,8 @@
       <linkfile src="config/BoardConfigKernel.mk" dest="vendor/google/build/config.mk" />
   </project>
 
+  <!-- Proprietary files extraction -->
+  <project path="tools/extract-utils" name="LeafOS-Project/android_tools_extract-utils" remote="leaf" />
+  <project path="prebuilts/extract-tools" name="LeafOS-Project/android_prebuilts_extract-tools" remote="leaf" />
+
 </manifest>
